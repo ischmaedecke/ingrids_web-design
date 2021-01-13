@@ -129,6 +129,7 @@ body{
 */
 @media screen and (max-width: 768px) {
     .container {
+        height: auto;
         width: calc(100vw - 40px);
         /* 
         WHY DOESNT THIS WORK?
@@ -140,13 +141,17 @@ body{
             "title"
             "intro"
             "content";
+        overflow-y: scroll;
      }
 
      /* SCROLL and OVERFLOW: how do I make it become a "normal" scroll on the mobile version? 
-     ANSWER: overflow set to VISIBLE */
+     ANSWER: overflow set to VISIBLE 
+     
+     BUT: HOW DO I MAKE THE SCROLLBAR VISIBLE AGAIN???
+     */
     
    body{
-    overflow-y: scroll;
+    overflow: scroll;
     }
     .title {
         align-items: center;
@@ -162,5 +167,8 @@ body{
         /* background-color: blue; */
         grid-area: content;
         overflow-y: visible;
+    }
+    .footer{
+        display: none;
     }
 }
