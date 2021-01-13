@@ -10,12 +10,13 @@ body {
 
 *{
     box-sizing: border-box;
-    background-color: rgb(170, 203, 223);
+    background-color: rgb(181, 205, 219);
     margin: 0px;
     padding: 0px;
        
 }
 
+/* I found this piece of code to hide the scrollbars but still keeping the columns scrollable, which is COOL */
 ::-webkit-scrollbar {
     display: none;
 }
@@ -35,7 +36,6 @@ h1 {
 h2{
     font-size: 16pt;
     font-weight: 400;
-
 }
 h4 {
     font-style: oblique;
@@ -45,34 +45,44 @@ p, li {
     font-weight: 400;
     font-style: normal;
     color: darkblue;
-    
+    list-style-type: circle;
 }
-
+li{
+    margin-left: 20px
+}
 p{
     padding-bottom: 20px;
 }
+
 body{
     overflow: hidden;
-}
-
-.body{
-
+    align-content: center;
 }
 
 .container {
     height: 100vh;
-    width: 100vw;
+    width: calc(100vw - 160px);
+    margin: 20px 20px 0px 20px;
     display: grid;
-    grid-template-columns: 20% 35% 45%;
+    column-gap: 40px;
+    row-gap: 0px;
+    /* Here I put column-gap before grid-template-columns as an attempt to be able to refer to column-gap value without typing the number itself.
+    Could not get it to work, though:
+    grid-template-columns: calc(33.33% - 2*"column-gap"/3) calc(33.33% - 2*"column-gap"/3) calc(33.33% - 2*"column-gap"/3);
+    */
+
+    /* Here below it also did not work for some reason
+    grid-template-columns: calc(20% - 40 / 3) calc(35% - 40 / 3) calc(45% - 40 / 3);
+    */
+    grid-template-columns: 1fr 35% 45%;
     grid-template-areas:
-        "title intro content";
-    column-gap: 20px;
+        "title intro content"
+        "footer footer footer";
 }
 
 .title, .intro, .content{
-    padding: 20px;
-    margin: 10px;
-
+    padding: 0px;
+    margin: 0px;
 }
 
 .title {
@@ -80,7 +90,6 @@ body{
     /* background-color: lightsalmon; */
     grid-area: title;
     align-items: left;
-    
 }
 
 .intro{
@@ -93,5 +102,65 @@ body{
     /* background-color: blue; */
     grid-area: content;
     overflow-y: scroll;
-    max-width: 80%;
+}
+
+.footer {
+    grid-area: footer;
+    margin-bottom: 20px;
+
+}
+
+
+
+/* THIS BELOW IS TO MAKE THE FONT SMALLER AND NOT CRASH WITH THE NEXT COLUMN*/
+@media screen and (max-width: 1200px) {
+    h1{
+        font-size: 25px;
+    }
+    h2{
+        font-size: 18px;
+    }
+}
+
+
+/* THIS BELOW IS TO MAKE THE COLUMNS STACK ON TOP OF EACH OTHER. 
+- Figuring out how to make it into one piece of scroll only.
+- ALSO: why does the width of the column is leaving so much white space on the right?
+*/
+@media screen and (max-width: 768px) {
+    .container {
+        width: calc(100vw - 40px);
+        /* 
+        WHY DOESNT THIS WORK?
+        width: 100vw;
+        margin-right: 20px;
+        */
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "title"
+            "intro"
+            "content";
+     }
+
+     /* SCROLL and OVERFLOW: how do I make it become a "normal" scroll on the mobile version? 
+     ANSWER: overflow set to VISIBLE */
+    
+   body{
+    overflow-y: scroll;
+    }
+    .title {
+        align-items: center;
+    }
+    
+    .intro{
+        /* background-color: red; */
+        grid-area: intro;
+        overflow-y: visible;
+    }
+    
+    .content {
+        /* background-color: blue; */
+        grid-area: content;
+        overflow-y: visible;
+    }
 }
