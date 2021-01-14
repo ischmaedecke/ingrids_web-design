@@ -10,10 +10,8 @@ body {
 
 *{
     box-sizing: border-box;
-    background-color: rgb(181, 205, 219);
     margin: 0px;
     padding: 0px;
-       
 }
 
 /* I found this piece of code to hide the scrollbars but still keeping the columns scrollable, which is COOL */
@@ -21,11 +19,19 @@ body {
     display: none;
 }
 
+a:link{
+    color: whitesmoke;
+}
+a:visited{
+    color:whitesmoke;
+    text-decoration: 1px whitesmoke;
+}
+
 h1, h2, h3, h4 {
     font-family: halyard-display, sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: white;
+    color: whitesmoke;
     line-height: 1.2;
     padding-bottom: 10px;
 }
@@ -44,7 +50,7 @@ p, li {
     font-family: halyard-display, sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: darkblue;
+    color: wheat;
     list-style-type: circle;
 }
 li{
@@ -55,6 +61,8 @@ p{
 }
 
 body{
+    /* background-color: rgb(181, 205, 219); */
+    background-color: rgb(71, 88, 99);
     overflow: hidden;
     align-content: center;
 }

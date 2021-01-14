@@ -1,0 +1,65 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: rad;
+}
+
+body {
+    width: calc(100vw - 20px);
+    justify-content: center;
+    background-color: rgb(29, 13, 13);
+    color: rgb(161, 161, 190);
+    font-size: 100px;
+}
+
+div {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+p {
+    /* transform: translate(0px, 500px) skew(-15deg, 15deg); */
+
+    animation-name: test2;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-play-state: running;
+}
+
+@keyframes test1 {
+    0%{
+        /* When I insert the rotation, it doesn't work anymore */
+        transform: translate(0px, calc(1vh/2));
+        color:skyblue;
+        filter: blur(0);
+    }
+    50% {
+        filter: blur(5px);
+        color: white;
+
+    }
+    100% {
+        transform: translate(0px, 100px);
+        color:yellowgreen;
+        filter: blur(0px);
+    }
+}
+
+@keyframes test2 {
+    0%{
+        /* When I insert the rotation, it doesn't work anymore */
+        transform: rotate(-90deg) skew(-15deg, 15deg) translate(0px, calc(1vh/2 + 200px)) ;
+        color:skyblue;
+    }
+    100% {
+        transform: rotate(90deg) skew(15deg, -15deg) translate(0px, calc(1vh/2));
+        color:yellowgreen;
+    }
+}
+/* p:hover{
+    color: yellow;
+} */
