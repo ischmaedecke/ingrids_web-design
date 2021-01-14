@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+section {
+    height: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+    max-width: 500px;
+    min-height: 500px;
+
+}
+.pt, .kg{
+    font-family: halyard-micro, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30pt;
+    text-transform: lowercase;
+    text-align: center;
+    
+    
+}
+.pt{
+    background-color: rgb(136, 127, 116);
+    animation-name: title-pt;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
+}
+
+.kg{
+    background-color: rgb(128, 146, 118);
+    animation-name: title-kg;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
+
+}
+@keyframes title-pt{
+    0%{
+        visibility: hidden;
+    }
+    100%{
+        visibility: visible;
+    }
+}
+@keyframes title-kg{
+    0%{
+        visibility: visible;
+    }
+    100%{
+        visibility: hidden;
+    }
+}
+@media screen and (max-width: 768px){
+    
+}

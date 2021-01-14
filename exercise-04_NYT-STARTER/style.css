@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section{
+
+}
+.hero{
+
+}
+.hero-text, .hero-image{
+
+}
+.hero-text{
+
+}
+.hero-image{
+
+}
+.category{
+
+}
+/* PORQUE QUE NAO PRECISA DESTE H1???
+. h1{
+
+} */
+
+@media screen and (max-width: 768px){
+    
+}
