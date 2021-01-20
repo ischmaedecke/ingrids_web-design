@@ -4,28 +4,137 @@
     padding: 0;
 }
 
+
 section{
-
+    width: 100vw;
+    /* background-color: thistle; */
+    /* margin: 10px; */
 }
-.hero{
-
+.hero-container{
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .hero-text, .hero-image{
-
+    width: 50%;
+    height: 100%;
 }
 .hero-text{
+    background-color: rgb(39, 39, 39);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: protipo, sans-serif;
+    text-align: center;
+    padding: 10%;
 
 }
 .hero-image{
+    background: url(img/cover.jpg) no-repeat center center;
+    background-size: cover;
+}
+.category, .blurb, h1, .author{
+    /* max-width: 200px; */
 
 }
 .category{
+    font-family: protipo, sans-serif;
+    font-size: small;
+    text-transform: uppercase;
 
 }
-/* PORQUE QUE NAO PRECISA DESTE H1???
-. h1{
+h1 {
+    font-family: mrs-eaves-xl-serif, serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 0 10px 0;
+}
+.hero-container h1{
+    font-size: 40px;
+}
+.blurb{
+    font-family: mrs-eaves-xl-serif, serif;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+.author, .date{
+    font-family: halyard-display, sans-serif;
+    font-size: small;
 
-} */
+}
+/* ARTICLES START HERE */
+.article-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(179, 179, 179);
+    padding: 5px;
+}
+
+.article-text, .article-image{
+    width: 80%;
+    height: 100%;
+    text-align: center;  
+}
+
+.article-text{
+    background-color: rgb(39, 39, 39);
+    color: white;
+    font-family: mrs-eaves-xl-serif, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10%;
+}
+
+.article-image{
+    background-size: cover;
+}
+.article-container h1{
+    font-size: 20px;
+}
+.article h1{
+    font-family: mrs-eaves-xl-serif, serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 0 10px 0;
+}
+.article-blurb{
+    padding-bottom: 20px;
+}
+
+/*IMAGES HERE*/
+
+.article1 {
+    background: url(img/img1.jpg) no-repeat center center;
+}
+.article2 {
+    background: url(img/img2.jpg) no-repeat center center;
+}
+.article3 {
+    background: url(img/img3.jpg) no-repeat center center;
+}
+.article4 {
+    background: url(img/img4.jpg) no-repeat center center;
+}
+/* END OF IMAGES */
+
+
+div [class^=article]{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+
+}
+
 
 @media screen and (max-width: 768px){
     
